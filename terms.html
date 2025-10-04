@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - ReUn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables - Same as main site */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--secondary);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 30px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-login {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-login:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-signup {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-signup:hover {
+            background-color: #2980b9;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Terms Content */
+        .terms-content {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .terms-intro {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .terms-intro h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .terms-intro p {
+            margin-bottom: 15px;
+        }
+
+        .terms-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .terms-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .terms-section p {
+            margin-bottom: 15px;
+        }
+
+        .terms-section ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .terms-section li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .terms-section li:before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .highlight-box {
+            background-color: #e8f4fc;
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .contact-info {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            header, footer, .auth-buttons {
+                display: none;
+            }
+            
+            .terms-content {
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-people-arrows"></i>
+                    <h1>Re<span>Un</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">How It Works</a></li>
+                        <li><a href="index.html#stories">Success Stories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <button class="btn btn-login" id="loginBtn">Login</button>
+                    <button class="btn btn-signup" id="signupBtn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Terms and Conditions</h1>
+            <p>Please read these terms carefully before using our services</p>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <div class="terms-container">
+                <div class="last-updated">
+                    Last updated: October 15, 2023
+                </div>
+
+                <div class="terms-intro">
+                    <h2>Welcome to ReUn</h2>
+                    <p>These Terms and Conditions govern your use of the ReUn website and services. By accessing or using our platform, you agree to be bound by these terms. If you disagree with any part of these terms, you may not access our services.</p>
+                    <p>ReUn provides a community-driven platform to help locate missing persons through coordinated efforts between families, volunteers, and authorities.</p>
+                </div>
+
+                <!-- Section 1 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">1</div>
+                        <h2>Acceptance of Terms</h2>
+                    </div>
+                    <p>By accessing and using ReUn, you accept and agree to be bound by the terms and provision of this agreement. Additionally, when using particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">2</div>
+                        <h2>Description of Service</h2>
+                    </div>
+                    <p>ReUn is a platform that facilitates the reporting and searching for missing persons through community engagement and technology. Our services include:</p>
+                    <ul>
+                        <li>Missing person reporting system</li>
+                        <li>Community alert network</li>
+                        <li>Volunteer coordination tools</li>
+                        <li>Information sharing platform</li>
+                        <li>Resource directory for families</li>
+                    </ul>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">3</div>
+                        <h2>User Accounts</h2>
+                    </div>
+                    <p>To access certain features of ReUn, you must register for an account. When registering, you agree to:</p>
+                    <ul>
+                        <li>Provide accurate, current, and complete information</li>
+                        <li>Maintain and promptly update your account information</li>
+                        <li>Maintain the security of your password</li>
+                        <li>Accept responsibility for all activities that occur under your account</li>
+                        <li>Notify us immediately of any unauthorized use of your account</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p><strong>Important:</strong> You must be at least 18 years old to create an account on ReUn. Accounts for minors must be created by a parent or legal guardian.</p>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">4</div>
+                        <h2>Privacy Policy</h2>
+                    </div>
+                    <p>Your privacy is critically important to us. Our Privacy Policy explains how we collect, use, and protect your personal information. By using ReUn, you agree to the collection and use of information in accordance with our Privacy Policy.</p>
+                    <p>We implement appropriate security measures to protect against unauthorized access to or unauthorized alteration, disclosure, or destruction of data.</p>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">5</div>
+                        <h2>User Responsibilities</h2>
+                    </div>
+                    <p>As a user of ReUn, you agree to:</p>
+                    <ul>
+                        <li>Use the service only for lawful purposes</li>
+                        <li>Provide accurate information when reporting missing persons</li>
+                        <li>Respect the privacy and dignity of all individuals</li>
+                        <li>Not engage in harassment, intimidation, or harmful behavior</li>
+                        <li>Not misuse or abuse the reporting system</li>
+                        <li>Cooperate with law enforcement when necessary</li>
+                    </ul>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">6</div>
+                        <h2>Content Guidelines</h2>
+                    </div>
+                    <p>When submitting content to ReUn (including photos, descriptions, and other information), you agree that:</p>
+                    <ul>
+                        <li>You have the right to share the content</li>
+                        <li>The content is accurate to the best of your knowledge</li>
+                        <li>The content does not violate any laws or third-party rights</li>
+                        <li>You grant ReUn a license to use this content for the purpose of locating missing persons</li>
+                    </ul>
+                    <p>We reserve the right to remove any content that violates these guidelines or is otherwise inappropriate.</p>
+                </div>
+
+                <!-- Section 7 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">7</div>
+                        <h2>Prohibited Activities</h2>
+                    </div>
+                    <p>You may not access or use ReUn for any purpose other than that for which we make the service available. Prohibited activities include:</p>
+                    <ul>
+                        <li>Harassing, abusing, or harming another person</li>
+                        <li>Submitting false or misleading information</li>
+                        <li>Interfering with security-related features of the service</li>
+                        <li>Engaging in unauthorized framing or linking to the service</li>
+                        <li>Using the service to compete with ReUn</li>
+                        <li>Deciphering, decompiling, or reverse engineering any software</li>
+                    </ul>
+                </div>
+
+                <!-- Section 8 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">8</div>
+                        <h2>Intellectual Property</h2>
+                    </div>
+                    <p>The ReUn service and its original content, features, and functionality are owned by ReUn and are protected by international copyright, trademark, and other intellectual property laws.</p>
+                    <p>Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of ReUn.</p>
+                </div>
+
+                <!-- Section 9 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">9</div>
+                        <h2>Termination</h2>
+                    </div>
+                    <p>We may terminate or suspend your account and bar access to the service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever, including but not limited to a breach of the Terms.</p>
+                    <p>If you wish to terminate your account, you may simply discontinue using the service or contact us to request account deletion.</p>
+                </div>
+
+                <!-- Section 10 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">10</div>
+                        <h2>Limitation of Liability</h2>
+                    </div>
+                    <p>In no event shall ReUn, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+                    <ul>
+                        <li>Your access to or use of or inability to access or use the service</li>
+                        <li>Any conduct or content of any third party on the service</li>
+                        <li>Any content obtained from the service</li>
+                        <li>Unauthorized access, use or alteration of your transmissions or content</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p><strong>Important Notice:</strong> While we strive to provide accurate and helpful services, ReUn cannot guarantee the location or recovery of missing persons. We are a facilitation platform, not a guarantee of results.</p>
+                    </div>
+                </div>
+
+                <!-- Section 11 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">11</div>
+                        <h2>Disclaimer</h2>
+                    </div>
+                    <p>Your use of the service is at your sole risk. The service is provided on an "AS IS" and "AS AVAILABLE" basis. The service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.</p>
+                    <p>ReUn does not warrant that the service will function uninterrupted, secure or available at any particular time or location.</p>
+                </div>
+
+                <!-- Section 12 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">12</div>
+                        <h2>Governing Law</h2>
+                    </div>
+                    <p>These Terms shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.</p>
+                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions will remain in effect.</p>
+                </div>
+
+                <!-- Section 13 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">13</div>
+                        <h2>Changes to Terms</h2>
+                    </div>
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect.</p>
+                    <p>What constitutes a material change will be determined at our sole discretion. By continuing to access or use our service after those revisions become effective, you agree to be bound by the revised terms.</p>
+                </div>
+
+                <!-- Section 14 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">14</div>
+                        <h2>Contact Information</h2>
+                    </div>
+                    <p>If you have any questions about these Terms, please contact us at:</p>
+                    <ul>
+                        <li>Email: legal@reun.org</li>
+                        <li>Phone: +1 (800) 123-4567</li>
+                        <li>Address: 123 Hope Street, City, State 12345</li>
+                    </ul>
+                </div>
+
+                <!-- Section 15 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">15</div>
+                        <h2>Emergency Situations</h2>
+                    </div>
+                    <p>ReUn is not an emergency service. If you are in an emergency situation or someone's life is in immediate danger, please contact local law enforcement by calling 911 or your local emergency number immediately.</p>
+                    <p>Our platform is designed to assist in non-emergency missing person cases and to coordinate community efforts. We work in cooperation with but do not replace official emergency services.</p>
+                </div>
+
+                <!-- Section 16 -->
+                <div class="terms-section">
+                    <div class="section-header">
+                        <div class="section-number">16</div>
+                        <h2>Volunteer Guidelines</h2>
+                    </div>
+                    <p>If you participate as a volunteer through ReUn, you agree to:</p>
+                    <ul>
+                        <li>Follow all safety protocols and guidelines</li>
+                        <li>Respect the privacy and dignity of all individuals</li>
+                        <li>Coordinate with official search efforts when applicable</li>
+                        <li>Not take unnecessary risks during search operations</li>
+                        <li>Report any findings through proper channels</li>
+                    </ul>
+                    <p>ReUn is not liable for injuries or incidents that occur during volunteer activities.</p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Need Help Understanding Our Terms?</h3>
+                    <p>If you have any questions about these Terms and Conditions, please don't hesitate to contact our support team.</p>
+                    <p>Email: support@reun.org | Phone: +1 (800) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ReUn</h3>
+                    <p>Reuniting lost loved ones through community and technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">How It Works</a></li>
+                        <li><a href="index.html#stories">Success Stories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Safety Tips</a></li>
+                        <li><a href="#">Volunteer Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="active">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ReUn. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for header navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add active class to current page in navigation
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Login/Signup buttons functionality
+            const loginBtn = document.getElementById('loginBtn');
+            const signupBtn = document.getElementById('signupBtn');
+            
+            loginBtn.addEventListener('click', function() {
+                window.location.href = 'report-missing.html';
+            });
+            
+            signupBtn.addEventListener('click', function() {
+                window.location.href = 'report-missing.html';
+            });
+        });
+    </script>
+</body>
+</html>
