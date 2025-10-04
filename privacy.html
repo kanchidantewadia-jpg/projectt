@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - ReUn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables - Same as main site */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--secondary);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 30px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-login {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-login:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-signup {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-signup:hover {
+            background-color: #2980b9;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Privacy Content */
+        .privacy-content {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .privacy-intro {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .privacy-intro h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .privacy-intro p {
+            margin-bottom: 15px;
+        }
+
+        .privacy-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .privacy-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .privacy-section p {
+            margin-bottom: 15px;
+        }
+
+        .privacy-section ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .privacy-section li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .privacy-section li:before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .highlight-box {
+            background-color: #e8f4fc;
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .data-table tr:hover {
+            background-color: #e8f4fc;
+        }
+
+        .contact-info {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            header, footer, .auth-buttons {
+                display: none;
+            }
+            
+            .privacy-content {
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-people-arrows"></i>
+                    <h1>Re<span>Un</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">How It Works</a></li>
+                        <li><a href="index.html#stories">Success Stories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <button class="btn btn-login" id="loginBtn">Login</button>
+                    <button class="btn btn-signup" id="signupBtn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. Learn how we protect and handle your information.</p>
+        </div>
+    </section>
+
+    <!-- Privacy Content -->
+    <section class="privacy-content">
+        <div class="container">
+            <div class="privacy-container">
+                <div class="last-updated">
+                    Last updated: October 15, 2023
+                </div>
+
+                <div class="privacy-intro">
+                    <h2>Our Commitment to Your Privacy</h2>
+                    <p>At ReUn, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.</p>
+                    <p>By using ReUn, you consent to the data practices described in this policy. We encourage you to read this Privacy Policy carefully to understand our views and practices regarding your personal data.</p>
+                </div>
+
+                <!-- Section 1 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">1</div>
+                        <h2>Information We Collect</h2>
+                    </div>
+                    <p>We collect several types of information to provide and improve our services:</p>
+                    
+                    <h3>Personal Information</h3>
+                    <ul>
+                        <li>Contact information (name, email address, phone number)</li>
+                        <li>Account credentials</li>
+                        <li>Demographic information</li>
+                        <li>Emergency contact details</li>
+                    </ul>
+                    
+                    <h3>Missing Person Information</h3>
+                    <ul>
+                        <li>Physical descriptions and photographs</li>
+                        <li>Last known location and circumstances</li>
+                        <li>Medical conditions and special needs</li>
+                        <li>Other relevant identifying information</li>
+                    </ul>
+                    
+                    <h3>Technical Information</h3>
+                    <ul>
+                        <li>IP addresses and device information</li>
+                        <li>Browser type and version</li>
+                        <li>Pages visited and time spent</li>
+                        <li>Cookies and usage data</li>
+                    </ul>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">2</div>
+                        <h2>How We Use Your Information</h2>
+                    </div>
+                    <p>We use the collected information for various purposes:</p>
+                    <ul>
+                        <li>To provide and maintain our services</li>
+                        <li>To facilitate missing person searches</li>
+                        <li>To notify you about changes to our services</li>
+                        <li>To allow you to participate in interactive features</li>
+                        <li>To provide customer support</li>
+                        <li>To gather analysis or valuable information to improve our services</li>
+                        <li>To monitor the usage of our services</li>
+                        <li>To detect, prevent and address technical issues</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Important:</strong> Information about missing persons is shared with volunteers and authorities only to the extent necessary to facilitate search efforts. We never sell or commercially exploit this sensitive information.</p>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">3</div>
+                        <h2>Legal Basis for Processing</h2>
+                    </div>
+                    <p>We process your personal information under the following legal bases:</p>
+                    <ul>
+                        <li><strong>Consent:</strong> You have given clear consent for us to process your personal data for specific purposes</li>
+                        <li><strong>Contract:</strong> Processing is necessary for a contract with you</li>
+                        <li><strong>Legal Obligation:</strong> Processing is necessary for compliance with a legal obligation</li>
+                        <li><strong>Vital Interests:</strong> Processing is necessary to protect someone's life</li>
+                        <li><strong>Legitimate Interests:</strong> Processing is necessary for our legitimate interests</li>
+                    </ul>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">4</div>
+                        <h2>Information Sharing and Disclosure</h2>
+                    </div>
+                    <p>We may share your information in the following situations:</p>
+                    
+                    <h3>With Service Providers</h3>
+                    <p>We may share your personal information with service providers to monitor and analyze the use of our service, to contact you.</p>
+                    
+                    <h3>For Business Transfers</h3>
+                    <p>We may share or transfer your personal information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</p>
+                    
+                    <h3>With Law Enforcement</h3>
+                    <p>Under certain circumstances, we may be required to disclose your personal information if required to do so by law or in response to valid requests by public authorities.</p>
+                    
+                    <h3>With Your Consent</h3>
+                    <p>We may disclose your personal information for any other purpose with your consent.</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Emergency Situations:</strong> In cases involving immediate danger or emergency circumstances, we may share necessary information with law enforcement and emergency services without explicit consent to protect vital interests.</p>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">5</div>
+                        <h2>Data Security</h2>
+                    </div>
+                    <p>The security of your data is important to us. We implement appropriate technical and organizational measures to protect your personal data against unauthorized or unlawful processing, accidental loss, destruction, or damage.</p>
+                    
+                    <h3>Our Security Measures Include:</h3>
+                    <ul>
+                        <li>Encryption of sensitive data in transit and at rest</li>
+                        <li>Regular security assessments and testing</li>
+                        <li>Access controls and authentication mechanisms</li>
+                        <li>Secure data centers with physical security</li>
+                        <li>Regular staff training on data protection</li>
+                        <li>Incident response and breach notification procedures</li>
+                    </ul>
+                    
+                    <p>While we strive to use commercially acceptable means to protect your personal data, we cannot guarantee its absolute security.</p>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">6</div>
+                        <h2>Data Retention</h2>
+                    </div>
+                    <p>We will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy.</p>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Data Type</th>
+                                <th>Retention Period</th>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Account Information</td>
+                                <td>While account is active + 2 years</td>
+                                <td>Service provision and legal requirements</td>
+                            </tr>
+                            <tr>
+                                <td>Missing Person Reports</td>
+                                <td>Case resolution + 7 years</td>
+                                <td>Legal and historical purposes</td>
+                            </tr>
+                            <tr>
+                                <td>Technical Logs</td>
+                                <td>1 year</td>
+                                <td>Security and troubleshooting</td>
+                            </tr>
+                            <tr>
+                                <td>Communication Records</td>
+                                <td>3 years</td>
+                                <td>Customer service and legal protection</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Section 7 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">7</div>
+                        <h2>Your Data Protection Rights</h2>
+                    </div>
+                    <p>Depending on your location, you may have the following data protection rights:</p>
+                    
+                    <h3>Right to Access</h3>
+                    <p>You have the right to request copies of your personal data.</p>
+                    
+                    <h3>Right to Rectification</h3>
+                    <p>You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</p>
+                    
+                    <h3>Right to Erasure</h3>
+                    <p>You have the right to request that we erase your personal data, under certain conditions.</p>
+                    
+                    <h3>Right to Restrict Processing</h3>
+                    <p>You have the right to request that we restrict the processing of your personal data, under certain conditions.</p>
+                    
+                    <h3>Right to Object to Processing</h3>
+                    <p>You have the right to object to our processing of your personal data, under certain conditions.</p>
+                    
+                    <h3>Right to Data Portability</h3>
+                    <p>You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</p>
+                    
+                    <p>If you make a request, we have one month to respond to you. Please contact us if you wish to make any of these requests.</p>
+                </div>
+
+                <!-- Section 8 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">8</div>
+                        <h2>Cookies and Tracking Technologies</h2>
+                    </div>
+                    <p>We use cookies and similar tracking technologies to track activity on our service and hold certain information.</p>
+                    
+                    <h3>Types of Cookies We Use:</h3>
+                    <ul>
+                        <li><strong>Essential Cookies:</strong> Necessary for the website to function properly</li>
+                        <li><strong>Performance Cookies:</strong> Help us understand how visitors interact with our website</li>
+                        <li><strong>Functionality Cookies:</strong> Allow the website to remember choices you make</li>
+                        <li><strong>Targeting Cookies:</strong> Used to deliver ads relevant to you</li>
+                    </ul>
+                    
+                    <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our service.</p>
+                </div>
+
+                <!-- Section 9 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">9</div>
+                        <h2>Third-Party Services</h2>
+                    </div>
+                    <p>We may employ third-party companies and individuals to facilitate our service, provide the service on our behalf, perform service-related services, or assist us in analyzing how our service is used.</p>
+                    
+                    <p>These third parties have access to your personal information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+                    
+                    <h3>Third-Party Services We Use:</h3>
+                    <ul>
+                        <li>Cloud storage and hosting providers</li>
+                        <li>Analytics services</li>
+                        <li>Payment processors</li>
+                        <li>Communication platforms</li>
+                        <li>Mapping and location services</li>
+                    </ul>
+                </div>
+
+                <!-- Section 10 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">10</div>
+                        <h2>Children's Privacy</h2>
+                    </div>
+                    <p>Our service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13.</p>
+                    
+                    <p>If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us. If we become aware that we have collected personal data from anyone under the age of 13 without verification of parental consent, we take steps to remove that information from our servers.</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Note:</strong> While children under 13 cannot create accounts, information about missing children may be submitted by parents, guardians, or authorities in accordance with applicable laws.</p>
+                    </div>
+                </div>
+
+                <!-- Section 11 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">11</div>
+                        <h2>International Data Transfers</h2>
+                    </div>
+                    <p>Your information, including personal data, may be transferred to — and maintained on — computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p>
+                    
+                    <p>If you are located outside United States and choose to provide information to us, please note that we transfer the data, including personal data, to United States and process it there.</p>
+                    
+                    <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
+                </div>
+
+                <!-- Section 12 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">12</div>
+                        <h2>Changes to This Privacy Policy</h2>
+                    </div>
+                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+                    
+                    <p>We will let you know via email and/or a prominent notice on our service, prior to the change becoming effective. You are advised to review this Privacy Policy periodically for any changes.</p>
+                    
+                    <p>Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                </div>
+
+                <!-- Section 13 -->
+                <div class="privacy-section">
+                    <div class="section-header">
+                        <div class="section-number">13</div>
+                        <h2>Contact Us</h2>
+                    </div>
+                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                    <ul>
+                        <li>By email: privacy@reun.org</li>
+                        <li>By phone: +1 (800) 123-4567</li>
+                        <li>By mail: 123 Hope Street, City, State 12345, United States</li>
+                    </ul>
+                    
+                    <h3>Data Protection Officer</h3>
+                    <p>For questions specifically about data protection and privacy, you can contact our Data Protection Officer at dpo@reun.org.</p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Questions About Your Privacy?</h3>
+                    <p>If you have any questions or concerns about how we handle your personal information, our privacy team is here to help.</p>
+                    <p>Email: privacy@reun.org | Phone: +1 (800) 123-4567</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ReUn</h3>
+                    <p>Reuniting lost loved ones through community and technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">How It Works</a></li>
+                        <li><a href="index.html#stories">Success Stories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Safety Tips</a></li>
+                        <li><a href="#">Volunteer Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="#" class="active">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ReUn. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for header navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add active class to current page in navigation
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Login/Signup buttons functionality
+            const loginBtn = document.getElementById('loginBtn');
+            const signupBtn = document.getElementById('signupBtn');
+            
+            loginBtn.addEventListener('click', function() {
+                window.location.href = 'report-missing.html';
+            });
+            
+            signupBtn.addEventListener('click', function() {
+                window.location.href = 'report-missing.html';
+            });
+        });
+    </script>
+</body>
+</html>
